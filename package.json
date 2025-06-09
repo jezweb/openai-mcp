@@ -10,7 +10,9 @@
     "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "start": "node build/index.js serve",
     "dev": "ts-node src/index.ts serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "lint": "eslint src/**/*.ts test/**/*.ts",
+    "format": "prettier --write src/**/*.ts test/**/*.ts --ignore-unknown"
   },
   "keywords": [
     "mcp",
@@ -22,15 +24,25 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.1.0",
-    "axios": "^1.6.7",
-    "commander": "^12.0.0",
-    "node-fetch": "^3.3.2"
+    "@modelcontextprotocol/sdk": "~1.12.1",
+    "axios": "^1.9.0",
+    "commander": "^14.0.0",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.25.56"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.15.30",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.8.3"
   },
   "type": "module"
 }
